@@ -1,0 +1,96 @@
+//
+// _bar-chart.scss
+//
+
+// scss-docs-start bar-chart-variables
+$bc-track-height:           5px;
+$bc-track-bg:               #f1f4f8;
+$bc-track-border-radius:    99px;
+
+$bc-fill-border-radius:     99px;
+$bc-fill-gradient:          linear-gradient(90deg, var(--ins-secondary, #1c84c6), var(--ins-primary, #1ab394));
+$bc-fill-transition:        width .3s ease-in-out;
+
+$bc-row-transition:         background .15s ease-in-out;
+$bc-row-border-radius:      6px;
+$bc-row-hover-bg:           var(--ins-tertiary-bg, #f8fafc);
+
+$bc-rank-size:              18px;
+$bc-rank-font-size:         .75rem;
+$bc-rank-font-weight:       800;
+$bc-rank-bg:                var(--ins-primary-bg-subtle, #e8f7f4);
+$bc-rank-color:             var(--ins-secondary, #1c84c6);
+
+$bc-tooltip-bg:             #1a2332;
+$bc-tooltip-color:          #fff;
+$bc-tooltip-font-size:      .6875rem;   // 11px
+$bc-tooltip-font-weight:    600;
+$bc-tooltip-padding-y:      5px;
+$bc-tooltip-padding-x:      10px;
+$bc-tooltip-border-radius:  7px;
+$bc-tooltip-shadow:         0 4px 12px rgba(0, 0, 0, .25);
+$bc-tooltip-z-index:        10;
+$bc-tooltip-right:          60px;
+// scss-docs-end bar-chart-variables
+
+// ── Progress track ────────────────────────────────────────────────────────────
+
+.bc-track {
+    height: $bc-track-height;
+    background: $bc-track-bg;
+    border-radius: $bc-track-border-radius;
+    overflow: hidden;
+}
+
+// ── Fill ──────────────────────────────────────────────────────────────────────
+
+.bc-fill {
+    height: 100%;
+    border-radius: $bc-fill-border-radius;
+    background: $bc-fill-gradient;
+    transition: $bc-fill-transition;
+}
+
+// ── Row (ranked variant) ──────────────────────────────────────────────────────
+
+.bc-row {
+    transition: $bc-row-transition;
+    border-radius: $bc-row-border-radius;
+
+    &:hover {
+        background: $bc-row-hover-bg;
+    }
+}
+
+// ── Rank badge ────────────────────────────────────────────────────────────────
+
+.bc-rank {
+    width: $bc-rank-size;
+    height: $bc-rank-size;
+    border-radius: 50%;
+    background: $bc-rank-bg;
+    color: $bc-rank-color;
+    font-size: $bc-rank-font-size;
+    font-weight: $bc-rank-font-weight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+
+.bc-tooltip {
+    position: absolute;
+    right: $bc-tooltip-right;
+    background: $bc-tooltip-bg;
+    color: $bc-tooltip-color;
+    padding: $bc-tooltip-padding-y $bc-tooltip-padding-x;
+    border-radius: $bc-tooltip-border-radius;
+    font-size: $bc-tooltip-font-size;
+    font-weight: $bc-tooltip-font-weight;
+    white-space: nowrap;
+    box-shadow: $bc-tooltip-shadow;
+    z-index: $bc-tooltip-z-index;
+    pointer-events: none;
+}

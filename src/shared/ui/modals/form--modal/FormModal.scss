@@ -1,0 +1,89 @@
+//
+// _form-modal.scss
+//
+
+// scss-docs-start form-modal-variables
+$fm-panel-padding-y:            18px;
+$fm-panel-padding-x:            18px;
+$fm-panel-padding-b:            14px;
+$fm-panel-border-radius:        var(--ins-border-radius, 0.3rem);
+$fm-panel-max-width:            95vw;
+$fm-panel-shadow:               0 8px 40px rgba(0, 0, 0, .18);
+
+$fm-btn-font-size:              .75rem;       // 12px
+$fm-btn-border-radius:          var(--ins-border-radius-sm, 0.25rem);
+
+$fm-cancel-font-weight:         600;
+$fm-cancel-padding-y:           5px;
+$fm-cancel-padding-x:           14px;
+
+$fm-confirm-font-weight:        700;
+$fm-confirm-padding-y:          5px;
+$fm-confirm-padding-x:          18px;
+$fm-confirm-gap:                6px;
+
+$fm-transition-bg:              background .15s ease-in-out;
+$fm-transition-opacity:         opacity .15s ease-in-out;
+// scss-docs-end form-modal-variables
+
+// ── Backdrop ──────────────────────────────────────────────────────────────────
+
+.fm-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .3);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// ── Panel ─────────────────────────────────────────────────────────────────────
+
+.fm-panel {
+    background: var(--ins-secondary-bg, #fff);
+    border-radius: $fm-panel-border-radius;
+    padding: $fm-panel-padding-y $fm-panel-padding-x $fm-panel-padding-b;
+    max-width: $fm-panel-max-width;
+    box-shadow: $fm-panel-shadow;
+}
+
+// ── Cancel button ─────────────────────────────────────────────────────────────
+
+.fm-cancel-btn {
+    border: 1px solid var(--ins-border-color);
+    background: var(--ins-tertiary-bg, #f8fafc);
+    border-radius: $fm-btn-border-radius;
+    padding: $fm-cancel-padding-y $fm-cancel-padding-x;
+    font-size: $fm-btn-font-size;
+    font-weight: $fm-cancel-font-weight;
+    color: var(--ins-secondary-color);
+    cursor: pointer;
+    font-family: inherit;
+    transition: $fm-transition-bg;
+
+    &:hover {
+        background: #f1f5f9;
+    }
+}
+
+// ── Confirm button ────────────────────────────────────────────────────────────
+
+.fm-confirm-btn {
+    border: none;
+    border-radius: $fm-btn-border-radius;
+    padding: $fm-confirm-padding-y $fm-confirm-padding-x;
+    font-size: $fm-btn-font-size;
+    font-weight: $fm-confirm-font-weight;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $fm-confirm-gap;
+    font-family: inherit;
+    transition: $fm-transition-opacity;
+
+    &:hover {
+        opacity: .88;
+    }
+}

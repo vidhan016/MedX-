@@ -1,0 +1,105 @@
+//
+// _timeline.scss
+//
+
+// scss-docs-start timeline-variables
+$timeline-dot-size:               13px;
+$timeline-dot-border-radius:      50%;
+
+$timeline-dot-lg-size:            30px;
+$timeline-dot-bordered-size:      31px;
+
+$timeline-time-width:             120px;
+
+$timeline-line-color:             var(--ins-border-color);
+$timeline-line-offset:            -7px;
+$timeline-line-offset-lg:         -16px;
+
+$timeline-line-border:            1px dashed $timeline-line-color;
+$timeline-line-border-lg:         2px dashed $timeline-line-color;
+// scss-docs-end timeline-variables
+
+// ── Item ──────────────────────────────────────────────────────────────────────
+
+.timeline-item {
+    position: relative;
+    align-items: flex-start;
+}
+
+// ── Dot ───────────────────────────────────────────────────────────────────────
+
+.timeline-dot {
+    width: $timeline-dot-size;
+    height: $timeline-dot-size;
+    border-radius: $timeline-dot-border-radius;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+// ── Time ──────────────────────────────────────────────────────────────────────
+
+.timeline-time {
+    width: $timeline-time-width;
+    text-align: right;
+}
+
+// ── Content + connector line ───────────────────────────────────────────────────
+
+.timeline-content {
+    flex: 1;
+    position: relative;
+}
+
+.timeline-item:not(:last-of-type) .timeline-content {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        bottom: 0;
+        left: $timeline-line-offset;
+        width: 1px;
+        border-left: $timeline-line-border;
+    }
+}
+
+// ── Icon-based + Icon-bordered + Users variants ────────────────────────────────
+
+.timeline-icon-based,
+.timeline-icon-bordered,
+.timeline-users {
+
+    .timeline-dot {
+        width: $timeline-dot-lg-size;
+        height: $timeline-dot-lg-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .timeline-item:not(:last-of-type) .timeline-content {
+        &::before {
+            left: $timeline-line-offset-lg;
+            border-left: $timeline-line-border-lg;
+        }
+    }
+}
+
+// ── Icon-bordered variant ─────────────────────────────────────────────────────
+
+.timeline-icon-bordered {
+
+    .timeline-dot {
+        width: $timeline-dot-bordered-size;
+        height: $timeline-dot-bordered-size;
+        background-color: var(--ins-card-bg, var(--ins-secondary-bg, #fff));
+        border: 1px dashed var(--ins-border-color);
+    }
+
+    .timeline-item:not(:last-of-type) .timeline-content {
+        &::before {
+            left: $timeline-line-offset-lg;
+            border-left: $timeline-line-border;
+        }
+    }
+}

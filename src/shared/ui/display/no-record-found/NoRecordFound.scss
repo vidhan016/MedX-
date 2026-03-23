@@ -1,0 +1,48 @@
+//
+// _no-record-found.scss
+//
+
+// scss-docs-start nrf-variables
+$nrf-bg:                var(--ins-tertiary-bg, #f8fafc);
+$nrf-border-color:      var(--ins-border-color);
+$nrf-border-radius:     var(--ins-border-radius-sm, 0.25rem);
+$nrf-font-size:         .75rem;     // 12px
+$nrf-color:             var(--ins-secondary-color);
+$nrf-padding-y:         10px;
+$nrf-padding-x:         14px;
+$nrf-mb:                10px;
+
+$nrf-action-color:      var(--ins-secondary, #1c84c6);
+$nrf-action-weight:     700;
+// scss-docs-end nrf-variables
+
+// ── Wrapper ───────────────────────────────────────────────────────────────────
+
+.nrf-wrap {
+    background: $nrf-bg;
+    border: 1px solid $nrf-border-color;
+    border-radius: $nrf-border-radius;
+    font-size: $nrf-font-size;
+    color: $nrf-color;
+    text-align: center;
+    padding: $nrf-padding-y $nrf-padding-x;
+    margin-bottom: $nrf-mb;
+}
+
+// ── Action button ─────────────────────────────────────────────────────────────
+
+.nrf-action {
+    color: $nrf-action-color;
+    font-weight: $nrf-action-weight;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    display: inline;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

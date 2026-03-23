@@ -1,0 +1,175 @@
+//
+// _heatmap-chart.scss
+//
+
+// scss-docs-start heatmap-chart-variables
+$hm-gap:                    3px;
+
+$hm-day-label-height:       22px;
+$hm-day-label-width:        24px;
+$hm-day-label-font-size:    .53125rem;  // 8.5px
+$hm-day-label-font-weight:  600;
+$hm-day-label-color:        #9ca3af;
+$hm-day-label-pt:           18px;
+$hm-day-label-pr:           4px;
+
+$hm-week-label-font-size:   .5rem;      // 8px
+$hm-week-label-font-weight: 600;
+$hm-week-label-color:       #9ca3af;
+$hm-week-label-mb:          3px;
+
+$hm-cell-height:            22px;
+$hm-cell-border-radius:     3px;
+$hm-cell-transition:        opacity .15s ease-in-out;
+$hm-cell-hover-opacity:     .85;
+
+$hm-num-font-size:          .5rem;      // 8px
+$hm-num-font-weight:        700;
+
+$hm-tooltip-bg:             #1a2332;
+$hm-tooltip-color:          #fff;
+$hm-tooltip-padding-y:      5px;
+$hm-tooltip-padding-x:      9px;
+$hm-tooltip-border-radius:  6px;
+$hm-tooltip-font-size:      .625rem;    // 10px
+$hm-tooltip-font-weight:    600;
+$hm-tooltip-shadow:         0 4px 12px rgba(0, 0, 0, .3);
+$hm-tooltip-z-index:        50;
+$hm-tooltip-day-color:      #60a5fa;
+$hm-tooltip-day-mb:         2px;
+
+$hm-legend-gap:             4px;
+$hm-legend-mt:              8px;
+$hm-legend-label-font-size: .5625rem;   // 9px
+$hm-legend-label-color:     #9ca3af;
+$hm-legend-swatch-size:     12px;
+$hm-legend-swatch-radius:   2px;
+// scss-docs-end heatmap-chart-variables
+
+// ── Grid wrapper ──────────────────────────────────────────────────────────────
+
+.hmWrap {
+    display: flex;
+    gap: $hm-gap;
+}
+
+// ── Day labels column ─────────────────────────────────────────────────────────
+
+.hmDayLabels {
+    display: flex;
+    flex-direction: column;
+    gap: $hm-gap;
+    padding-top: $hm-day-label-pt;
+    flex-shrink: 0;
+}
+
+.hmDayLabel {
+    height: $hm-day-label-height;
+    display: flex;
+    align-items: center;
+    font-size: $hm-day-label-font-size;
+    color: $hm-day-label-color;
+    font-weight: $hm-day-label-font-weight;
+    width: $hm-day-label-width;
+    justify-content: flex-end;
+    padding-right: $hm-day-label-pr;
+}
+
+// ── Week columns area ─────────────────────────────────────────────────────────
+
+.hmBody { flex: 1; }
+
+.hmWeekLabels {
+    display: grid;
+    gap: $hm-gap;
+    margin-bottom: $hm-week-label-mb;
+}
+
+.hmWeekLabel {
+    font-size: $hm-week-label-font-size;
+    font-weight: $hm-week-label-font-weight;
+    color: $hm-week-label-color;
+    text-align: center;
+}
+
+.hmGrid {
+    display: grid;
+    gap: $hm-gap;
+}
+
+.hmCol {
+    display: flex;
+    flex-direction: column;
+    gap: $hm-gap;
+}
+
+.hmEmpty { height: $hm-cell-height; }
+
+// ── Cell ──────────────────────────────────────────────────────────────────────
+
+.hmCell {
+    height: $hm-cell-height;
+    border-radius: $hm-cell-border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: default;
+    transition: $hm-cell-transition;
+
+    &:hover {
+        opacity: $hm-cell-hover-opacity;
+    }
+}
+
+.hmNum {
+    font-size: $hm-num-font-size;
+    font-weight: $hm-num-font-weight;
+    line-height: 1;
+    pointer-events: none;
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+
+.hmTooltip {
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: $hm-tooltip-bg;
+    color: $hm-tooltip-color;
+    padding: $hm-tooltip-padding-y $hm-tooltip-padding-x;
+    border-radius: $hm-tooltip-border-radius;
+    font-size: $hm-tooltip-font-size;
+    font-weight: $hm-tooltip-font-weight;
+    white-space: nowrap;
+    box-shadow: $hm-tooltip-shadow;
+    z-index: $hm-tooltip-z-index;
+    pointer-events: none;
+}
+
+.hmTooltipDay {
+    color: $hm-tooltip-day-color;
+    margin-bottom: $hm-tooltip-day-mb;
+}
+
+// ── Legend ────────────────────────────────────────────────────────────────────
+
+.hmLegend {
+    display: flex;
+    align-items: center;
+    gap: $hm-legend-gap;
+    margin-top: $hm-legend-mt;
+    justify-content: flex-end;
+}
+
+.hmLegendLabel {
+    font-size: $hm-legend-label-font-size;
+    color: $hm-legend-label-color;
+}
+
+.hmLegendSwatch {
+    width: $hm-legend-swatch-size;
+    height: $hm-legend-swatch-size;
+    border-radius: $hm-legend-swatch-radius;
+}

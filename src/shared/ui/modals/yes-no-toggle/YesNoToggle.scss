@@ -1,0 +1,36 @@
+//
+// _yes-no-toggle.scss
+//
+
+// scss-docs-start ynt-variables
+$ynt-btn-padding-y:       5px;
+$ynt-btn-padding-x:       18px;
+$ynt-btn-font-size:       .75rem;     // 12px
+$ynt-btn-font-weight:     700;
+$ynt-btn-border-radius:   99px;
+$ynt-btn-border-width:    1.5px;
+$ynt-btn-transition:      all .15s ease-in-out;
+// scss-docs-end ynt-variables
+
+// ── Row container ─────────────────────────────────────────────────────────────
+
+.ynt-row {
+    background: var(--ins-tertiary-bg, #f8fafc);
+    border: 1px solid var(--ins-border-color);
+    border-radius: var(--ins-border-radius-sm, 0.25rem);
+}
+
+// ── Option button ─────────────────────────────────────────────────────────────
+
+.ynt-btn {
+    padding: $ynt-btn-padding-y $ynt-btn-padding-x;
+    border-radius: $ynt-btn-border-radius;
+    font-size: $ynt-btn-font-size;
+    font-weight: $ynt-btn-font-weight;
+    cursor: pointer;
+    font-family: inherit;
+    border: $ynt-btn-border-width solid var(--ins-border-color);
+    background: var(--ins-secondary-bg, #fff);
+    color: var(--ins-secondary-color);
+    transition: $ynt-btn-transition;
+}

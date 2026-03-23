@@ -1,0 +1,33 @@
+//
+// _bubble-chart.scss
+//
+
+// scss-docs-start bubble-chart-variables
+$bbc-tooltip-bg:            #1a2332;
+$bbc-tooltip-color:         #fff;
+$bbc-tooltip-padding-y:     7px;
+$bbc-tooltip-padding-x:     11px;
+$bbc-tooltip-border-radius: 8px;
+$bbc-tooltip-shadow:        0 4px 16px rgba(0, 0, 0, .3);
+$bbc-tooltip-font-size:     .6875rem;   // 11px
+$bbc-tooltip-font-weight:   600;
+$bbc-tooltip-z-index:       20;
+$bbc-tooltip-transform:     translate(-50%, -120%);
+// scss-docs-end bubble-chart-variables
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+
+.bbc-tooltip {
+    position: absolute;
+    transform: $bbc-tooltip-transform;
+    background: $bbc-tooltip-bg;
+    color: $bbc-tooltip-color;
+    padding: $bbc-tooltip-padding-y $bbc-tooltip-padding-x;
+    border-radius: $bbc-tooltip-border-radius;
+    box-shadow: $bbc-tooltip-shadow;
+    pointer-events: none;
+    z-index: $bbc-tooltip-z-index;
+    font-size: $bbc-tooltip-font-size;
+    font-weight: $bbc-tooltip-font-weight;
+    white-space: nowrap;
+}

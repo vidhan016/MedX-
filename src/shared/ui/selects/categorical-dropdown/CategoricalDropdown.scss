@@ -1,0 +1,198 @@
+//
+// _categorical-dropdown.scss
+//
+// Uses --cd-accent and --cd-accent-bg CSS variables forwarded from
+// the accentColor / accentBg props on the component root.
+//
+
+// scss-docs-start cd-variables
+$cd-input-border-width:         1.5px;
+$cd-input-transition:           border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$cd-input-open-shadow:          0 0 0 3px rgba(0, 0, 0, .06);
+
+$cd-tree-col-width:             28px;
+$cd-tree-offset:                14px;
+$cd-tree-hline-width:           10px;
+$cd-tree-dot-size:              5px;
+$cd-tree-dot-left:              22px;
+$cd-tree-opacity:               .25;
+$cd-tree-transition:            background .15s ease-in-out, opacity .15s ease-in-out;
+
+$cd-remove-dot-bg:              #dcfce7;
+$cd-remove-dot-border:          #86efac;
+$cd-remove-dot-color:           #15803d;
+$cd-remove-dot-hover-bg:        #dc2626;
+
+$cd-added-dot-color:            #15803d;
+
+$cd-item-row-transition:        background .1s ease-in-out;
+
+$cd-top-add-shadow:             0 4px 12px rgba(0, 0, 0, .08);
+$cd-add-dropdown-width:         320px;
+$cd-add-dropdown-max-height:    360px;
+$cd-add-dropdown-shadow:        0 8px 28px rgba(0, 0, 0, .13);
+$cd-dropdown-max-height:        320px;
+$cd-dropdown-shadow:            0 8px 28px rgba(0, 0, 0, .13);
+// scss-docs-end cd-variables
+
+// ── Input row ─────────────────────────────────────────────────────────────────
+
+.cd-input-row {
+    border: $cd-input-border-width solid var(--ins-border-color);
+    transition: $cd-input-transition;
+
+    &.cd-input-row--open {
+        border-color: var(--cd-accent);
+        box-shadow: $cd-input-open-shadow;
+    }
+}
+
+// ── Category header (sticky) ──────────────────────────────────────────────────
+
+.cd-cat-header {
+    color: var(--cd-accent);
+    background: var(--cd-accent-bg);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    user-select: none;
+
+    &.cd-cat-header-border {
+        border-bottom: 1px solid var(--ins-border-color);
+    }
+}
+
+// ── Cat add button ────────────────────────────────────────────────────────────
+
+.cd-cat-add-btn {
+    background: var(--cd-accent);
+    color: #fff;
+}
+
+// ── Selected count badge ──────────────────────────────────────────────────────
+
+.cd-count-badge {
+    background: var(--cd-accent);
+    color: #fff;
+}
+
+// ── Chevron icon ──────────────────────────────────────────────────────────────
+
+.cd-chevron {
+    color: var(--cd-accent);
+}
+
+// ── Tree connector lines ──────────────────────────────────────────────────────
+
+.cd-tree-col {
+    width: $cd-tree-col-width;
+    flex-shrink: 0;
+    position: relative;
+    padding-left: $cd-tree-offset;
+}
+
+.cd-tree-vline {
+    position: absolute;
+    left: $cd-tree-offset;
+    top: 0;
+    width: 1px;
+    background: var(--cd-accent);
+    opacity: $cd-tree-opacity;
+
+    &.cd-tree-vline--last { bottom: 50%; }
+    &.cd-tree-vline--full { bottom: 0; }
+}
+
+.cd-tree-hline {
+    position: absolute;
+    left: $cd-tree-offset;
+    top: 50%;
+    width: $cd-tree-hline-width;
+    height: 1px;
+    background: var(--cd-accent);
+    opacity: $cd-tree-opacity;
+    transform: translateY(-50%);
+}
+
+.cd-tree-dot {
+    position: absolute;
+    left: $cd-tree-dot-left;
+    top: 50%;
+    width: $cd-tree-dot-size;
+    height: $cd-tree-dot-size;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: $cd-tree-transition;
+
+    &.cd-tree-dot--added {
+        background: $cd-added-dot-color;
+        opacity: 1;
+    }
+
+    &.cd-tree-dot--default {
+        background: var(--cd-accent);
+        opacity: .4;
+    }
+}
+
+// ── Item row hover ────────────────────────────────────────────────────────────
+
+.cd-item-row {
+    transition: $cd-item-row-transition;
+
+    &:hover:not(.cd-item-row--added) {
+        background: var(--cd-accent-bg) !important;
+    }
+}
+
+// ── Remove dot (inline ✕) ─────────────────────────────────────────────────────
+
+.cd-remove-dot {
+    background: $cd-remove-dot-bg;
+    border: 1px solid $cd-remove-dot-border;
+    color: $cd-remove-dot-color;
+    transition: background .15s ease-in-out, color .15s ease-in-out, border-color .15s ease-in-out;
+
+    &:hover {
+        background: $cd-remove-dot-hover-bg !important;
+        color: #fff !important;
+        border-color: $cd-remove-dot-hover-bg !important;
+    }
+}
+
+// ── Add category panel (top) ──────────────────────────────────────────────────
+
+.cd-top-add-panel {
+    border: 1px solid var(--ins-border-color);
+    box-shadow: $cd-top-add-shadow;
+}
+
+// ── Add dropdown panel ────────────────────────────────────────────────────────
+
+.cd-add-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 42px;
+    width: $cd-add-dropdown-width;
+    z-index: 260;
+    max-height: $cd-add-dropdown-max-height;
+    box-shadow: $cd-add-dropdown-shadow;
+}
+
+// ── Main dropdown panel ───────────────────────────────────────────────────────
+
+.cd-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 200;
+    max-height: $cd-dropdown-max-height;
+    box-shadow: $cd-dropdown-shadow;
+}
+
+// ── Open category row (addDropdown) ──────────────────────────────────────────
+
+.cd-add-cat-row--open {
+    background: var(--cd-accent-bg);
+}

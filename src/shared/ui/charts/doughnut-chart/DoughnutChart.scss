@@ -1,0 +1,29 @@
+//
+// _doughnut-chart.scss
+//
+
+// scss-docs-start doughnut-chart-variables
+$dc-legend-dot-size:        9px;
+$dc-segment-transition:     opacity .15s ease-in-out;
+$dc-segment-hover-opacity:  .8;
+// scss-docs-end doughnut-chart-variables
+
+// ── Legend dot ────────────────────────────────────────────────────────────────
+
+.dc-legend-dot {
+    width: $dc-legend-dot-size;
+    height: $dc-legend-dot-size;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+// ── SVG segment ───────────────────────────────────────────────────────────────
+
+.dc-segment {
+    transition: $dc-segment-transition;
+    cursor: pointer;
+
+    &:hover {
+        opacity: $dc-segment-hover-opacity;
+    }
+}

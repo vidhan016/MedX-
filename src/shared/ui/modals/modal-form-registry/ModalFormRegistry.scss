@@ -1,0 +1,56 @@
+//
+// _modal-form-registry.scss
+//
+
+// scss-docs-start mfr-variables
+$mfr-btn-padding-y:         3px;
+$mfr-btn-padding-x:         9px;
+$mfr-btn-font-size:         .6875rem;   // 11px
+$mfr-btn-font-weight:       600;
+$mfr-btn-border-radius:     var(--ins-border-radius-sm, 0.25rem);
+$mfr-btn-gap:               4px;
+$mfr-btn-transition-opacity: opacity .15s ease-in-out;
+$mfr-btn-transition-bg:     background .15s ease-in-out;
+// scss-docs-end mfr-variables
+
+// ── Edit button ───────────────────────────────────────────────────────────────
+
+.mfr-edit-btn {
+    border: 1px solid var(--ins-border-color);
+    border-radius: $mfr-btn-border-radius;
+    padding: $mfr-btn-padding-y $mfr-btn-padding-x;
+    font-size: $mfr-btn-font-size;
+    font-weight: $mfr-btn-font-weight;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $mfr-btn-gap;
+    font-family: inherit;
+    transition: $mfr-btn-transition-opacity;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+// ── Remove button ─────────────────────────────────────────────────────────────
+
+.mfr-remove-btn {
+    border: 1px solid #fecaca;
+    background: #fff5f5;
+    border-radius: $mfr-btn-border-radius;
+    padding: $mfr-btn-padding-y $mfr-btn-padding-x;
+    font-size: $mfr-btn-font-size;
+    font-weight: $mfr-btn-font-weight;
+    color: var(--ins-danger, #ed5565);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $mfr-btn-gap;
+    font-family: inherit;
+    transition: $mfr-btn-transition-bg;
+
+    &:hover {
+        background: #fee2e2;
+    }
+}

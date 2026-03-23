@@ -1,0 +1,105 @@
+//
+// _onset-calendar.scss
+//
+
+// scss-docs-start oc-variables
+$oc-panel-border-width:     1.5px;
+$oc-panel-border-radius:    12px;
+$oc-panel-shadow:           0 10px 30px rgba(0, 0, 0, .15);
+$oc-panel-z-index:          999;
+
+$oc-sidebar-width:          140px;
+
+$oc-transition-bg:          background .15s ease-in-out;
+$oc-transition-day:         background .1s ease-in-out, color .1s ease-in-out;
+$oc-transition-cell:        background .1s ease-in-out, color .1s ease-in-out;
+
+$oc-selected-bg:            var(--ins-secondary, #1c84c6);
+$oc-selected-color:         #fff;
+$oc-selected-font-weight:   700;
+
+$oc-today-bg:               var(--ins-primary-bg-subtle, #e8f7f4);
+$oc-hover-bg:               var(--ins-primary-bg-subtle, #e8f7f4);
+// scss-docs-end oc-variables
+
+// ── Root panel ────────────────────────────────────────────────────────────────
+
+.oc-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: $oc-panel-z-index;
+    border: $oc-panel-border-width solid var(--ins-border-color);
+    border-radius: $oc-panel-border-radius;
+    box-shadow: $oc-panel-shadow;
+    user-select: none;
+    overflow: hidden;
+}
+
+// ── Left quick-select sidebar ─────────────────────────────────────────────────
+
+.oc-sidebar {
+    width: $oc-sidebar-width;
+    border-right: 1px solid var(--ins-border-color);
+}
+
+// ── Quick option row ──────────────────────────────────────────────────────────
+
+.oc-quick-opt {
+    transition: $oc-transition-bg;
+
+    &:hover {
+        background: $oc-hover-bg;
+    }
+}
+
+// ── Day cell ──────────────────────────────────────────────────────────────────
+
+.oc-day {
+    transition: $oc-transition-day;
+
+    &.oc-day--selected {
+        background: $oc-selected-bg;
+        color: $oc-selected-color;
+        font-weight: $oc-selected-font-weight;
+    }
+
+    &.oc-day--today {
+        background: $oc-today-bg;
+        color: var(--ins-body-color);
+    }
+
+    &.oc-day--empty {
+        cursor: default;
+        color: transparent;
+    }
+
+    &.oc-day--default {
+        cursor: pointer;
+        color: var(--ins-body-color);
+
+        &:hover {
+            background: $oc-hover-bg;
+        }
+    }
+}
+
+// ── Month / Year cell ─────────────────────────────────────────────────────────
+
+.oc-cell {
+    transition: $oc-transition-cell;
+
+    &.oc-cell--active {
+        background: $oc-selected-bg;
+        color: $oc-selected-color;
+    }
+
+    &.oc-cell--inactive {
+        background: transparent;
+        color: var(--ins-body-color);
+
+        &:hover {
+            background: $oc-hover-bg;
+        }
+    }
+}

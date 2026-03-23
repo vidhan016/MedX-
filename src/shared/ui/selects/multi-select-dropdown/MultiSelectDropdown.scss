@@ -1,0 +1,88 @@
+//
+// _multi-select-dropdown.scss
+//
+// Uses --msd-pill-bg, --msd-pill-color, --msd-pill-border CSS variables
+// forwarded from the pillColor prop via inline CSS custom property on root.
+//
+
+// scss-docs-start msd-variables
+$msd-trigger-border-width:      1.5px;
+$msd-trigger-min-height:        36px;
+$msd-trigger-transition:        border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$msd-trigger-open-border:       var(--ins-secondary, #1c84c6);
+$msd-trigger-open-shadow:       0 0 0 3px rgba(37, 99, 235, .08);
+
+$msd-dropdown-z-index:          200;
+$msd-dropdown-max-height:       280px;
+$msd-dropdown-shadow:           0 8px 28px rgba(0, 0, 0, .13);
+
+$msd-item-check-size:           14px;
+$msd-item-check-border-width:   1.5px;
+$msd-item-check-transition:     background .12s ease-in-out, border-color .12s ease-in-out;
+$msd-item-check-active-bg:      var(--ins-secondary, #1c84c6);
+
+$msd-top-add-shadow:            0 4px 12px rgba(0, 0, 0, .08);
+// scss-docs-end msd-variables
+
+// ── Trigger row ───────────────────────────────────────────────────────────────
+
+.msd-trigger {
+    border: $msd-trigger-border-width solid var(--ins-border-color);
+    min-height: $msd-trigger-min-height;
+    transition: $msd-trigger-transition;
+    cursor: text;
+
+    &.msd-trigger--open {
+        border-color: $msd-trigger-open-border;
+        box-shadow: $msd-trigger-open-shadow;
+    }
+}
+
+// ── Pill ──────────────────────────────────────────────────────────────────────
+
+.msd-pill {
+    background: var(--msd-pill-bg);
+    color: var(--msd-pill-color);
+    border: var(--msd-pill-border);
+    line-height: 1.4;
+}
+
+// ── Dropdown panel ────────────────────────────────────────────────────────────
+
+.msd-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: $msd-dropdown-z-index;
+    max-height: $msd-dropdown-max-height;
+    box-shadow: $msd-dropdown-shadow;
+}
+
+// ── Item check circle ─────────────────────────────────────────────────────────
+
+.msd-item-check {
+    width: $msd-item-check-size;
+    height: $msd-item-check-size;
+    border-radius: 50%;
+    border: $msd-item-check-border-width solid var(--ins-border-color);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $msd-item-check-transition;
+}
+
+.msd-item--selected {
+    .msd-item-check {
+        background: $msd-item-check-active-bg;
+        border-color: $msd-item-check-active-bg;
+    }
+}
+
+// ── Top add panel ─────────────────────────────────────────────────────────────
+
+.msd-top-add-panel {
+    border: 1px solid var(--ins-border-color);
+    box-shadow: $msd-top-add-shadow;
+}

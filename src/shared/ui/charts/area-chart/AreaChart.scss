@@ -1,0 +1,226 @@
+//
+// _apexcharts.scss
+// ApexCharts — INSPINIA theme overrides
+// Drop once in your global styles (e.g. shared/styles/vendors/)
+//
+
+// scss-docs-start apexcharts-variables
+$apexcharts-font-family:        var(--ins-font-sans-serif, "Open Sans", sans-serif);
+$apexcharts-legend-font-size:   13px;
+$apexcharts-legend-font-weight: 600;
+$apexcharts-legend-marker-mr:   5px;
+
+$apexcharts-tooltip-border:     1px solid var(--ins-border-color, #e7e9eb);
+$apexcharts-tooltip-bg:         var(--ins-secondary-bg, #fff);
+$apexcharts-tooltip-shadow:     var(--ins-box-shadow, 0px 1px 4px 0px rgba(130, 143, 163, .15));
+
+$apexcharts-grid-dasharray:     3;
+$apexcharts-stroke-color:       var(--ins-border-color, #e7e9eb);
+
+$apexcharts-menu-padding:       0;
+$apexcharts-datalabels-pl:      10px;
+// scss-docs-end apexcharts-variables
+
+// ── Base canvas ───────────────────────────────────────────────────────────────
+
+.apex-charts {
+    min-height: 10px !important;
+}
+
+.apexcharts-canvas {
+    margin: 0 auto;
+    min-height: 10px !important;
+
+    svg {
+        min-width: auto !important;
+    }
+}
+
+// ── Typography ────────────────────────────────────────────────────────────────
+
+.apexcharts-tooltip-title,
+.apex-charts text,
+.apexcharts-tooltip *,
+.apexcharts-tooltip-text,
+.apexcharts-xaxistooltip-text,
+.apexcharts-datalabels text,
+.apexcharts-legend-text,
+.apexcharts-title-text,
+.apexcharts-subtitle-text,
+.apexcharts-yaxis text,
+.apexcharts-xaxis text {
+    font-family: $apexcharts-font-family !important;
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+
+.apexcharts-tooltip {
+    border: $apexcharts-tooltip-border !important;
+    background-color: $apexcharts-tooltip-bg !important;
+    box-shadow: $apexcharts-tooltip-shadow !important;
+
+    .apexcharts-tooltip-title {
+        background-color: var(--ins-tertiary-bg, #f6f7fb) !important;
+        border-bottom: 1px solid var(--ins-border-color, #e7e9eb) !important;
+    }
+}
+
+// ── Legend ────────────────────────────────────────────────────────────────────
+
+.apexcharts-legend-series,
+.apexcharts-legend-text {
+    font-weight: $apexcharts-legend-font-weight;
+}
+
+.apexcharts-legend-text {
+    color: var(--ins-secondary-color, #9ba6b7) !important;
+    font-size: $apexcharts-legend-font-size !important;
+    vertical-align: middle;
+}
+
+.apexcharts-legend-marker {
+    vertical-align: middle;
+    margin-right: $apexcharts-legend-marker-mr !important;
+    top: 1px !important;
+}
+
+// ── Grid ──────────────────────────────────────────────────────────────────────
+
+.apexcharts-gridline {
+    pointer-events: none;
+    stroke-dasharray: $apexcharts-grid-dasharray;
+}
+
+.apexcharts-xaxis-tick,
+.apexcharts-gridline,
+.apexcharts-grid-borders .apexcharts-gridline + line,
+.apexcharts-radar-series polygon,
+.apexcharts-radar-series line,
+.apexcharts-pie circle,
+.apexcharts-pie line {
+    stroke: $apexcharts-stroke-color;
+}
+
+.apexcharts-grid {
+    rect {
+        fill: none;
+    }
+}
+
+// ── Axis labels ───────────────────────────────────────────────────────────────
+
+.apexcharts-title-text,
+.apexcharts-subtitle-text,
+.apexcharts-xaxis text,
+.apexcharts-yaxis text {
+    fill: var(--ins-secondary-color, #9ba6b7);
+}
+
+// ── Axis tooltip (crosshair label) ────────────────────────────────────────────
+
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+    background-color: var(--ins-secondary-bg, #fff) !important;
+    border: 1px solid var(--ins-border-color, #e7e9eb) !important;
+    box-shadow: $apexcharts-tooltip-shadow !important;
+    color: var(--ins-body-color, #4c4c5c) !important;
+}
+
+.apexcharts-xaxistooltip-bottom {
+    &::before {
+        border-bottom-color: var(--ins-border-color, #e7e9eb) !important;
+    }
+
+    &::after {
+        border-bottom-color: var(--ins-secondary-bg, #fff) !important;
+    }
+}
+
+// ── Pie labels ────────────────────────────────────────────────────────────────
+
+.apexcharts-pie-label {
+    fill: #fff !important;
+}
+
+// ── Bar / heatmap / pie strokes ───────────────────────────────────────────────
+
+.apex-charts {
+    .apexcharts-heatmap-series rect,
+    .apexcharts-treemap rect,
+    .apexcharts-bar-series path,
+    .apexcharts-pie-series path {
+        stroke: var(--ins-secondary-bg, #fff);
+    }
+}
+
+// ── Markers ───────────────────────────────────────────────────────────────────
+
+.apexcharts-marker {
+    stroke: var(--ins-body-bg, #f1f2f7);
+}
+
+// ── Radial track ──────────────────────────────────────────────────────────────
+
+.apexcharts-track {
+    path {
+        stroke: var(--ins-tertiary-bg, #f6f7fb);
+    }
+}
+
+// ── Toolbar active button ─────────────────────────────────────────────────────
+
+.apex-toolbar {
+    .btn-light.active {
+        background-color: var(--ins-primary, #1ab394);
+        border-color: var(--ins-primary, #1ab394);
+        color: #fff;
+    }
+}
+
+// ── Context menu ──────────────────────────────────────────────────────────────
+
+.apexcharts-menu {
+    background: var(--ins-secondary-bg, #fff) !important;
+    box-shadow: $apexcharts-tooltip-shadow !important;
+    border: 1px solid var(--ins-border-color, #e7e9eb) !important;
+    text-align: center !important;
+
+    .apexcharts-menu-item {
+        &:hover {
+            color: var(--ins-body-color, #4c4c5c) !important;
+            background-color: var(--ins-tertiary-bg, #f6f7fb) !important;
+        }
+    }
+}
+
+// ── Annotation ────────────────────────────────────────────────────────────────
+
+.apexcharts-annotation-rect {
+    fill: var(--ins-tertiary-bg, #f6f7fb) !important;
+}
+
+.apexcharts-xaxis-annotations,
+.apexcharts-yaxis-annotations {
+    rect {
+        stroke: none;
+    }
+}
+
+// ── Data labels ───────────────────────────────────────────────────────────────
+
+.apexcharts-datalabel-value,
+.apexcharts-datalabel-label {
+    fill: var(--ins-body-color, #4c4c5c) !important;
+}
+
+.apexcharts-data-labels {
+    padding-left: $apexcharts-datalabels-pl !important;
+}
+
+// ── Fix min-height override from card-body ────────────────────────────────────
+
+.card-body {
+    > div[style*="min-height"] {
+        min-height: unset !important;
+    }
+}

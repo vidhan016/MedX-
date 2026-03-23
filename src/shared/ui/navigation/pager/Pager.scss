@@ -1,0 +1,154 @@
+//
+// _pager.scss
+//
+
+// scss-docs-start pager-variables
+$pager-btn-size:                  1.75rem;
+$pager-btn-font-size:             .75rem;
+$pager-btn-font-weight:           600;
+$pager-btn-border-radius:         var(--ins-border-radius-sm, 0.25rem);
+$pager-btn-border-color:          var(--ins-border-color);
+$pager-btn-color:                 var(--ins-body-color);
+$pager-btn-bg:                    var(--ins-secondary-bg);
+
+$pager-btn-hover-color:           var(--ins-secondary, #1c84c6);
+$pager-btn-hover-bg:              #eff6ff;
+$pager-btn-hover-border-color:    var(--ins-secondary, #1c84c6);
+
+$pager-btn-active-color:          #fff;
+$pager-btn-active-bg:             var(--ins-secondary, #1c84c6);
+$pager-btn-active-border-color:   var(--ins-secondary, #1c84c6);
+$pager-btn-active-font-weight:    700;
+
+$pager-btn-disabled-color:        var(--ins-secondary-color);
+$pager-btn-disabled-bg:           var(--ins-tertiary-bg, #f6f7fb);
+$pager-btn-disabled-border-color: var(--ins-border-color);
+
+$pager-select-font-size:          .75rem;
+$pager-select-font-weight:        600;
+$pager-select-border-radius:      var(--ins-border-radius-sm, 0.25rem);
+$pager-select-border-color:       var(--ins-border-color);
+$pager-select-focus-border:       var(--ins-secondary, #1c84c6);
+$pager-select-bg:                 var(--ins-secondary-bg);
+$pager-select-color:              var(--ins-body-color);
+
+$pager-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+// scss-docs-end pager-variables
+
+// ── Wrapper ───────────────────────────────────────────────────────────────────
+
+.pager-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding-top: .75rem;
+    margin-top: .5rem;
+    border-top: 1px solid var(--ins-border-color);
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+// ── Count label ───────────────────────────────────────────────────────────────
+
+.pager-count {
+    font-size: .71875rem;   // 11.5px
+    color: var(--ins-secondary-color);
+}
+
+.pager-count-bold {
+    color: var(--ins-body-color);
+    font-weight: 700;
+}
+
+// ── Right group ───────────────────────────────────────────────────────────────
+
+.pager-right {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+    margin-left: auto;
+}
+
+// ── Controls row ──────────────────────────────────────────────────────────────
+
+.pager-controls {
+    display: flex;
+    align-items: center;
+    gap: .1875rem;
+}
+
+// ── Ellipsis ──────────────────────────────────────────────────────────────────
+
+.pager-ellipsis {
+    font-size: .75rem;
+    color: var(--ins-secondary-color);
+    padding: 0 .1875rem;
+}
+
+// ── Base page button ──────────────────────────────────────────────────────────
+
+.pager-btn {
+    width: $pager-btn-size;
+    height: $pager-btn-size;
+    border-radius: $pager-btn-border-radius;
+    border: 1px solid $pager-btn-border-color;
+    background: $pager-btn-bg;
+    color: $pager-btn-color;
+    font-size: $pager-btn-font-size;
+    font-weight: $pager-btn-font-weight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $pager-transition;
+    flex-shrink: 0;
+
+    &:hover:not(:disabled):not(.pager-btn--active) {
+        background: $pager-btn-hover-bg;
+        border-color: $pager-btn-hover-border-color;
+        color: $pager-btn-hover-color;
+    }
+
+    &:disabled,
+    &.pager-btn--disabled {
+        background: $pager-btn-disabled-bg;
+        border-color: $pager-btn-disabled-border-color;
+        color: $pager-btn-disabled-color;
+        cursor: not-allowed;
+    }
+
+    &.pager-btn--active {
+        background: $pager-btn-active-bg;
+        border-color: $pager-btn-active-border-color;
+        color: $pager-btn-active-color;
+        font-weight: $pager-btn-active-font-weight;
+        cursor: default;
+    }
+
+    &.pager-btn-symbol {
+        font-weight: 700;
+        font-size: .875rem;
+    }
+}
+
+// ── Page size select ──────────────────────────────────────────────────────────
+
+.pager-select {
+    border: 1.5px solid $pager-select-border-color;
+    border-radius: $pager-select-border-radius;
+    padding: .25rem .5rem;
+    font-family: inherit;
+    font-size: $pager-select-font-size;
+    font-weight: $pager-select-font-weight;
+    color: $pager-select-color;
+    background: $pager-select-bg;
+    cursor: pointer;
+    outline: none;
+    transition: border-color .15s ease-in-out;
+
+    &:focus {
+        border-color: $pager-select-focus-border;
+    }
+}

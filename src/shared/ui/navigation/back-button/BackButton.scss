@@ -1,0 +1,72 @@
+//
+// _button.scss
+//
+
+// scss-docs-start button-variables
+$btn-padding-y:         8px;
+$btn-padding-x:         16px;
+$btn-font-size:         .8125rem;   // 13px
+$btn-font-weight:       600;
+$btn-border-radius:     var(--ins-border-radius-sm, 0.25rem);
+$btn-gap:               6px;
+$btn-transition:        all .15s ease-in-out;
+
+$btn-sm-padding-y:      6px;
+$btn-sm-padding-x:      12px;
+$btn-sm-font-size:      .75rem;     // 12px
+// scss-docs-end button-variables
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $btn-gap;
+    padding: $btn-padding-y $btn-padding-x;
+    border-radius: $btn-border-radius;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    cursor: pointer;
+    border: none;
+    transition: $btn-transition;
+    font-family: inherit;
+
+    // ── Size modifier ──
+    &.btn-sm {
+        padding: $btn-sm-padding-y $btn-sm-padding-x;
+        font-size: $btn-sm-font-size;
+    }
+
+    // ── Color variants ──
+    &.btn-blue {
+        background: var(--ins-secondary, #1c84c6);
+        color: #fff;
+
+        &:hover { background: var(--ins-secondary-dark, #1565c0); }
+    }
+
+    &.btn-teal {
+        background: var(--ins-primary, #1ab394);
+        color: #fff;
+
+        &:hover { background: var(--ins-primary-dark, #179b7f); }
+    }
+
+    &.btn-out {
+        background: var(--ins-secondary-bg, #fff);
+        color: var(--ins-body-color, #4c4c5c);
+        border: 1px solid var(--ins-border-color, #e7e9eb);
+
+        &:hover {
+            background: var(--ins-tertiary-bg, #f6f7fb);
+            border-color: var(--ins-border-color-dark, #d0d5dd);
+        }
+    }
+
+    &.btn-red {
+        background: var(--ins-danger, #ed5565);
+        color: #fff;
+
+        &:hover { background: #b91c1c; }
+    }
+}

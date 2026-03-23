@@ -1,0 +1,93 @@
+//
+// _column-chart.scss
+//
+
+// scss-docs-start column-chart-variables
+$cc-mini-wrap-height:           140px;
+$cc-mini-wrap-gap:              8px;
+$cc-mini-wrap-pb:               16px;
+
+$cc-mini-bar-border-radius:     5px 5px 0 0;
+$cc-mini-bar-gradient:          linear-gradient(180deg, #2563eb, #60a5fa);
+
+$cc-mini-num-font-size:         .6875rem;   // 11px
+$cc-mini-num-font-weight:       700;
+$cc-mini-num-color:             var(--ins-secondary, #1c84c6);
+$cc-mini-num-mb:                3px;
+
+$cc-mini-lbl-font-size:         .625rem;    // 10px
+$cc-mini-lbl-font-weight:       500;
+$cc-mini-lbl-color:             #9ca3af;
+$cc-mini-lbl-mt:                4px;
+
+$cc-tooltip-bg:                 #1a2332;
+$cc-tooltip-color:              #fff;
+$cc-tooltip-padding-y:          7px;
+$cc-tooltip-padding-x:          11px;
+$cc-tooltip-border-radius:      8px;
+$cc-tooltip-shadow:             0 4px 16px rgba(0, 0, 0, .3);
+$cc-tooltip-font-size:          .6875rem;   // 11px
+$cc-tooltip-z-index:            20;
+$cc-tooltip-transform:          translate(-50%, -120%);
+// scss-docs-end column-chart-variables
+
+// ── Mini variant (WeeklyFlow style) ───────────────────────────────────────────
+
+.cc-mini-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: $cc-mini-wrap-gap;
+    height: $cc-mini-wrap-height;
+    padding-bottom: $cc-mini-wrap-pb;
+}
+
+.cc-mini-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+.cc-mini-bars {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cc-mini-bar {
+    width: 100%;
+    border-radius: $cc-mini-bar-border-radius;
+    background: $cc-mini-bar-gradient;
+}
+
+.cc-mini-num {
+    font-size: $cc-mini-num-font-size;
+    font-weight: $cc-mini-num-font-weight;
+    color: $cc-mini-num-color;
+    margin-bottom: $cc-mini-num-mb;
+}
+
+.cc-mini-lbl {
+    font-size: $cc-mini-lbl-font-size;
+    font-weight: $cc-mini-lbl-font-weight;
+    color: $cc-mini-lbl-color;
+    margin-top: $cc-mini-lbl-mt;
+}
+
+// ── Tooltip (Full variant) ────────────────────────────────────────────────────
+
+.cc-tooltip {
+    position: absolute;
+    transform: $cc-tooltip-transform;
+    background: $cc-tooltip-bg;
+    color: $cc-tooltip-color;
+    padding: $cc-tooltip-padding-y $cc-tooltip-padding-x;
+    border-radius: $cc-tooltip-border-radius;
+    box-shadow: $cc-tooltip-shadow;
+    pointer-events: none;
+    z-index: $cc-tooltip-z-index;
+    font-size: $cc-tooltip-font-size;
+    white-space: nowrap;
+}

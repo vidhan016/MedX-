@@ -4,11 +4,11 @@ import './App.css'
 import MainLayout from "./core/layout/MainLayout";
 import { type AppTab, type ConsultStep, type PatientBasic } from "./core/layout/Header/Header";
 import { type Notification } from "./core/layout/components/NotificationPanel";
-import DoctorHomePage from "./modules/clinical/features/doctor/home/pages/DoctorHomePage";
-import DoctorAppointmentsPage from "./modules/clinical/features/doctor/appointments/pages/DoctorAppointmentsPage";
-import DoctorPatientsPage from "./modules/clinical/features/doctor/patients/pages/DoctorPatientsPage";
-import ReportsPage from "./modules/clinical/features/doctor/reports/pages/ReportsPage";
-import type { HistoryPatient } from "./modules/clinical/features/doctor/patients/types/doctor-patients.types";
+import DoctorHomePage from "./modules/clinical/features/doctor/features/home/pages/DoctorHomePage";
+import DoctorAppointmentsPage from "./modules/clinical/features/doctor/features/appointments/pages/DoctorAppointmentsPage";
+import DoctorPatientsPage from "./modules/clinical/features/doctor/features/patients/pages/DoctorPatientsPage";
+import ReportsPage from "./modules/clinical/features/doctor/features/reports/pages/ReportsPage";
+import type { HistoryPatient } from "./modules/clinical/features/doctor/features/patients/types/doctor-patients.types";
 
 // ── Consultation steps ─────────────────────────────────────────────────────────
 

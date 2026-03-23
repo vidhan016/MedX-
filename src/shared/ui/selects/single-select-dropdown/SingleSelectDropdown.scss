@@ -1,0 +1,74 @@
+//
+// _single-select-dropdown.scss
+//
+
+// scss-docs-start ssd-variables
+$ssd-trigger-border-width:      1.5px;
+$ssd-trigger-transition:        border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$ssd-trigger-open-border:       var(--ins-secondary, #1c84c6);
+$ssd-trigger-open-shadow:       0 0 0 3px rgba(37, 99, 235, .08);
+
+$ssd-dropdown-z-index:          200;
+$ssd-dropdown-max-height:       280px;
+$ssd-dropdown-shadow:           0 8px 28px rgba(0, 0, 0, .13);
+
+$ssd-item-check-size:           14px;
+$ssd-item-check-border-width:   1.5px;
+$ssd-item-check-transition:     background .12s ease-in-out, border-color .12s ease-in-out;
+$ssd-item-check-active-bg:      var(--ins-secondary, #1c84c6);
+// scss-docs-end ssd-variables
+
+// ── Trigger button ────────────────────────────────────────────────────────────
+
+.ssd-trigger {
+    border: $ssd-trigger-border-width solid var(--ins-border-color);
+    transition: $ssd-trigger-transition;
+
+    &.ssd-trigger--open {
+        border-color: $ssd-trigger-open-border;
+        box-shadow: $ssd-trigger-open-shadow;
+    }
+}
+
+// ── Dropdown panel ────────────────────────────────────────────────────────────
+
+.ssd-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: $ssd-dropdown-z-index;
+    max-height: $ssd-dropdown-max-height;
+    box-shadow: $ssd-dropdown-shadow;
+}
+
+// ── Search wrap ───────────────────────────────────────────────────────────────
+
+.ssd-search-wrap {
+    border-bottom: 1px solid var(--ins-border-color);
+    background: var(--ins-tertiary-bg, #f8fafc);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+// ── Item check circle ─────────────────────────────────────────────────────────
+
+.ssd-item-check {
+    width: $ssd-item-check-size;
+    height: $ssd-item-check-size;
+    border-radius: 50%;
+    border: $ssd-item-check-border-width solid var(--ins-border-color);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $ssd-item-check-transition;
+}
+
+.ssd-item--selected {
+    .ssd-item-check {
+        background: $ssd-item-check-active-bg;
+        border-color: $ssd-item-check-active-bg;
+    }
+}
