@@ -1,0 +1,259 @@
+/* ─── Sidebar shell ────────────────────────────────────────────────────────── */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  min-height: 100vh;
+  background: var(--bs-sidenav-bg, #1a2332);
+  border-right: 1px solid var(--bs-sidenav-border-color, rgba(255, 255, 255, 0.07));
+  transition: width 0.22s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 40;
+}
+
+.sidebar.collapsed {
+  width: 58px;
+}
+
+/* ─── Logo row ─────────────────────────────────────────────────────────────── */
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border-bottom: 1px solid var(--bs-sidenav-border-color, rgba(255, 255, 255, 0.06));
+  min-height: 58px;
+}
+
+.logoRowCollapsed {
+  justify-content: center;
+  position: relative;
+}
+
+.logoImgWrap {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ─── Collapse button ──────────────────────────────────────────────────────── */
+
+.collapseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--bs-sidenav-border-color, rgba(255, 255, 255, 0.15));
+  background: transparent;
+  color: var(--bs-sidenav-item-color, rgba(255, 255, 255, 0.5));
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.collapseBtn:hover {
+  background: var(--bs-sidenav-item-hover-bg, rgba(255, 255, 255, 0.08));
+  color: var(--bs-sidenav-item-hover-color, #fff);
+}
+
+/* When collapsed the button escapes via fixed positioning */
+.collapseBtnFixed {
+  position: fixed;
+  left: 44px;
+  top: 14px;
+  z-index: 200;
+  background: var(--bs-sidenav-bg, #1a2332);
+  border: 1px solid var(--bs-sidenav-border-color, rgba(255, 255, 255, 0.2));
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Navigation ───────────────────────────────────────────────────────────── */
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.navCollapsed {
+  padding: 8px 0;
+  align-items: center;
+}
+
+/* ─── Nav item ─────────────────────────────────────────────────────────────── */
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--bs-sidenav-item-color, rgba(255, 255, 255, 0.55));
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.navItem:hover {
+  background: var(--bs-sidenav-item-hover-bg, rgba(255, 255, 255, 0.07));
+  color: var(--bs-sidenav-item-hover-color, rgba(255, 255, 255, 0.85));
+}
+
+.navItemActive {
+  background: var(--bs-sidenav-item-active-bg, rgba(37, 99, 235, 0.18));
+  color: var(--bs-sidenav-item-active-color, #fff);
+  font-weight: 600;
+}
+
+.navItemActive:hover {
+  background: var(--bs-sidenav-item-active-bg, rgba(37, 99, 235, 0.18));
+  color: var(--bs-sidenav-item-active-color, #fff);
+  filter: brightness(1.08);
+}
+
+.navItemCollapsed {
+  justify-content: center;
+  padding: 9px;
+  width: 40px;
+  border-radius: 8px;
+}
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Badge ────────────────────────────────────────────────────────────────── */
+
+.navBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--bs-sidenav-item-active-bg, rgba(37, 99, 235, 0.35));
+  color: var(--bs-sidenav-item-active-color, #93c5fd);
+  flex-shrink: 0;
+}
+
+/* ─── Footer ───────────────────────────────────────────────────────────────── */
+
+.footer {
+  padding: 8px 8px 12px;
+  border-top: 1px solid var(--bs-sidenav-border-color, rgba(255, 255, 255, 0.06));
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ─── Doctor row ───────────────────────────────────────────────────────────── */
+
+.doctorRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.doctorRow:hover {
+  background: var(--bs-sidenav-item-hover-bg, rgba(255, 255, 255, 0.05));
+}
+
+.doctorRowCollapsed {
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bs-sidenav-item-active-bg, rgba(37, 99, 235, 0.3));
+  color: var(--bs-sidenav-item-active-color, #93c5fd);
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.doctorInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.doctorName {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--bs-sidenav-item-active-color, rgba(255, 255, 255, 0.9));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doctorRole {
+  font-size: 10.5px;
+  color: var(--bs-sidenav-item-color, rgba(255, 255, 255, 0.4));
+  font-weight: 400;
+  margin-top: 1px;
+}
+
+.onlineDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 1.5px solid var(--bs-sidenav-bg, #1a2332);
+  flex-shrink: 0;
+}
+
+/* ─── Sign out ─────────────────────────────────────────────────────────────── */
+
+.signOutBtn {
+  color: var(--bs-sidenav-item-color, rgba(255, 255, 255, 0.4));
+  font-size: 12.5px;
+}
+
+.signOutBtn:hover {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.08);
+}

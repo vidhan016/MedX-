@@ -1,0 +1,125 @@
+/* ─── Grid wrapper ────────────────────────────────────────────────────────── */
+
+.hmWrap {
+  display: flex;
+  gap: 3px;
+}
+
+/* ─── Day labels column ───────────────────────────────────────────────────── */
+
+.hmDayLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 18px;
+  flex-shrink: 0;
+}
+
+.hmDayLabel {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  font-size: 8.5px;
+  color: #9ca3af;
+  font-weight: 600;
+  width: 24px;
+  justify-content: flex-end;
+  padding-right: 4px;
+}
+
+/* ─── Week columns area ───────────────────────────────────────────────────── */
+
+.hmBody { flex: 1; }
+
+.hmWeekLabels {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 3px;
+}
+
+.hmWeekLabel {
+  font-size: 8px;
+  color: #9ca3af;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hmGrid {
+  display: grid;
+  gap: 3px;
+}
+
+.hmCol {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hmEmpty { height: 22px; }
+
+/* ─── Cell ────────────────────────────────────────────────────────────────── */
+
+.hmCell {
+  height: 22px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: default;
+  transition: opacity 0.15s;
+}
+
+.hmCell:hover { opacity: 0.85; }
+
+.hmNum {
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ─── Tooltip ─────────────────────────────────────────────────────────────── */
+
+.hmTooltip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a2332;
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.hmTooltipDay {
+  color: #60a5fa;
+  margin-bottom: 2px;
+}
+
+/* ─── Legend ──────────────────────────────────────────────────────────────── */
+
+.hmLegend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.hmLegendLabel {
+  font-size: 9px;
+  color: #9ca3af;
+}
+
+.hmLegendSwatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}

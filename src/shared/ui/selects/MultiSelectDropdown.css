@@ -1,0 +1,58 @@
+/* ── MultiSelectDropdown.css ─────────────────────────────────────────────────
+   Uses --msd-pill-bg, --msd-pill-color, --msd-pill-border CSS variables
+   forwarded from the pillColor prop via inline CSS custom property on root.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* ── Trigger row ── */
+.msd-trigger {
+  border: 1.5px solid var(--border);
+  min-height: 36px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  cursor: text;
+}
+.msd-trigger--open {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* ── Pill ── */
+.msd-pill {
+  background: var(--msd-pill-bg);
+  color: var(--msd-pill-color);
+  border: var(--msd-pill-border);
+  line-height: 1.4;
+}
+
+/* ── Dropdown panel ── */
+.msd-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 200;
+  max-height: 280px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+}
+
+/* ── Item check circle ── */
+.msd-item-check {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, border-color 0.12s;
+}
+.msd-item--selected .msd-item-check {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* ── Top add panel ── */
+.msd-top-add-panel {
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

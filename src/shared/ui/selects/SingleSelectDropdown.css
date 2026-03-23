@@ -1,0 +1,48 @@
+/* ── SingleSelectDropdown.css ────────────────────────────────────────────────── */
+
+/* ── Trigger button ── */
+.ssd-trigger {
+  border: 1.5px solid var(--border);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ssd-trigger--open {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* ── Dropdown panel ── */
+.ssd-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 200;
+  max-height: 280px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+}
+
+/* ── Search wrap ── */
+.ssd-search-wrap {
+  border-bottom: 1px solid var(--border);
+  background: #f8fafc;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* ── Item check circle ── */
+.ssd-item-check {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, border-color 0.12s;
+}
+.ssd-item--selected .ssd-item-check {
+  background: var(--blue);
+  border-color: var(--blue);
+}

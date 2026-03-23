@@ -1,0 +1,62 @@
+/* ── ColumnChart.css ─────────────────────────────────────────────────────────── */
+
+/* ─── Mini variant (WeeklyFlow style) ──────────────────────────────────────── */
+
+.cc-mini-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 140px;
+  padding-bottom: 16px;
+}
+
+.cc-mini-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+
+.cc-mini-bars {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cc-mini-bar {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(180deg, #2563eb, #60a5fa);
+}
+
+.cc-mini-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 3px;
+}
+
+.cc-mini-lbl {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ─── Tooltip (Full variant) ────────────────────────────────────────────────── */
+
+.cc-tooltip {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  background: #1a2332;
+  color: #fff;
+  padding: 7px 11px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 20;
+  font-size: 11px;
+  white-space: nowrap;
+}

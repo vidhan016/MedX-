@@ -1,0 +1,59 @@
+/* ── FormModal.css ───────────────────────────────────────────────────────────── */
+
+/* ── Backdrop ── */
+.fm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Panel ── */
+.fm-panel {
+  background: #fff;
+  border-radius: var(--rs);
+  padding: 18px 18px 14px;
+  max-width: 95vw;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Cancel button ── */
+.fm-cancel-btn {
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  border-radius: var(--rxs);
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.fm-cancel-btn:hover {
+  background: #f1f5f9;
+}
+
+/* ── Confirm button ── */
+.fm-confirm-btn {
+  border: none;
+  border-radius: var(--rxs);
+  padding: 5px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+
+.fm-confirm-btn:hover {
+  opacity: 0.88;
+}

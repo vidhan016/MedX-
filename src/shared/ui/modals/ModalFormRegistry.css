@@ -1,0 +1,41 @@
+/* ── ModalFormRegistry.css ───────────────────────────────────────────────────── */
+
+/* ── Edit button ── */
+.mfr-edit-btn {
+  border: 1px solid var(--border);
+  border-radius: var(--rxs);
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+
+.mfr-edit-btn:hover {
+  opacity: 0.8;
+}
+
+/* ── Remove button ── */
+.mfr-remove-btn {
+  border: 1px solid #fecaca;
+  background: #fff5f5;
+  border-radius: var(--rxs);
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.mfr-remove-btn:hover {
+  background: #fee2e2;
+}

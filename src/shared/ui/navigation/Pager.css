@@ -1,0 +1,61 @@
+/* ── Pager.css ──────────────────────────────────────────────────────────────── */
+
+/* ── Base page button ── */
+.pager-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.pager-btn:hover:not(:disabled):not(.pager-btn--active) {
+  background: var(--blue-bg);
+  border-color: var(--blue-mid);
+  color: var(--blue);
+}
+
+/* ── Disabled nav button ── */
+.pager-btn:disabled,
+.pager-btn--disabled {
+  background: #f8fafc;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* ── Active page number ── */
+.pager-btn--active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  font-weight: 700;
+  cursor: default;
+}
+
+/* ── Page size select ── */
+.pager-select {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.pager-select:focus {
+  border-color: var(--blue);
+}
